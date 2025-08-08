@@ -90,4 +90,25 @@
   copy:
     src: ./disk/files/one
     dest: /data2/file2.txt
+- name: Add Docker repository
+  shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  args:
+    creates: /etc/yum.repos.d/docker-ce.repo
 
+- name: Install Docker
+  yum:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present
+
+- name: Start and enable Docker service
+  systemd:
+    name: docker
+    state: started
+    enabled: true
+- name: run the container
+  shell: |
+    docker rm -f $(docker ps -a -q)
+    docker run -d -p 8085:8085 {{ image_name }}
