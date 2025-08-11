@@ -3,7 +3,7 @@
     name:
       - yum-utils
       - parted
-      - xfsprogsi
+      - xfsprogs 
       - git
       - python3
       - python3-pip
