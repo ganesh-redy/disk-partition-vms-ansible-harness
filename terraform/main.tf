@@ -1,5 +1,5 @@
 provider "google" {
-    project = "sam-465905"
+    project = "sam-474404"
     zone = "us-central1-a"
 }
 locals {
