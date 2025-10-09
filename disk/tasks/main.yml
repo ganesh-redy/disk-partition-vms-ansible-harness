@@ -112,3 +112,7 @@
   shell: |
     docker rm -f $(docker ps -a -q)
     docker run -d -p 8085:8085 {{ image_name }}
+- name: file copy
+  copy:
+    src: /tmp/{{ filename }}
+    dest: /root/
