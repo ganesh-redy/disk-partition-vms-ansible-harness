@@ -50,7 +50,7 @@ resource "google_compute_instance" "name" {
     # Trigger Harness pipeline with the IP
     response=$(curl -s -w "\n%%{http_code}" -X POST \
       -H 'content-type: application/json' \
-      --url 'https://app.harness.io/gateway/pipeline/api/webhook/custom/LK-U8_s-R6u5Nb-AVr5ysw/v3?accountIdentifier=ucHySz2jQKKWQweZdXyCog&orgIdentifier=default&projectIdentifier=SFTY_Training&pipelineIdentifier=cdmigtriggeransibleganesh&triggerIdentifier=custom_host_ip' \
+      --url 'https://app.harness.io/gateway/pipeline/api/webhook/custom/PYmjEWiwTKKwvl_q6PK2qg/v3?accountIdentifier=ucHySz2jQKKWQweZdXyCog&orgIdentifier=default&projectIdentifier=SFTY_Training&pipelineIdentifier=cdjavatriggerganesh&triggerIdentifier=host_ip' \
       -d '{"host": "'"$HOSTKEY"'"}')
     
     http_code=$(echo "$response" | tail -n1)
