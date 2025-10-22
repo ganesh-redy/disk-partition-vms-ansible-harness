@@ -115,4 +115,4 @@
 - name: file copy
   copy:
     src: /tmp/{{ filename }}
-    dest: /root/
+    dest: /root/file.jar
